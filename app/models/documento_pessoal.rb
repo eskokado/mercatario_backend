@@ -1,5 +1,7 @@
 class DocumentoPessoal < ApplicationRecord
-  belongs_to :credor
+  self.table_name = "documentos_pessoais"
+
+  belongs_to :credor, foreign_key: "credor_id"
   has_one_attached :arquivo
   validates :tipo, presence: true
 
