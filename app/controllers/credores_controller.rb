@@ -1,10 +1,14 @@
 class CredoresController < ApplicationController
   def create
-    credor = Credor.new(credor_params)
-    if credor.save
-      render json: credor, status: :created
-    else
-      render json: credor.errors, status: :unprocessable_entity
+    Credor.transaction do
+      Rails.logger.info "==> Parâmetros recebidos: #{params.inspect}"
+      credor = Credor.new(credor_params)
+
+      if credor.save
+        render json: { data: credor }, status: :created
+      else
+        render json: credor.errors.full_messages, status: :unprocessable_entity
+      end
     end
   end
 
@@ -16,6 +20,21 @@ class CredoresController < ApplicationController
   private
 
   def credor_params
-    params.permit(:nome, :cpf_cnpj, :email, :telefone, precatorio_attributes: [ :numero_precatorio, :valor_nominal, :foro, :data_publicacao ])
+    params.require(:credor).permit(
+      :nome,
+      :cpf_cnpj,
+      :email,
+      :telefone,
+      precatorio: [
+        :numero_precatorio,
+        :valor_nominal,
+        :foro,
+        :data_publicacao
+      ]
+    ).tap do |whitelisted|
+      if params[:credor][:precatorio].present?
+        whitelisted[:precatorios_attributes] = [ whitelisted.delete(:precatorio) ]
+      end
+    end
   end
 end
