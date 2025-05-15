@@ -61,29 +61,26 @@ paths:
             schema:
               type: object
               properties:
-                credor:
+                nome:
+                  type: string
+                cpf_cnpj:
+                  type: string
+                email:
+                  type: string
+                telefone:
+                  type: string
+                precatorio:
                   type: object
                   properties:
-                    nome:
+                    numero_precatorio:
                       type: string
-                    cpf_cnpj:
+                    valor_nominal:
+                      type: number
+                    foro:
                       type: string
-                    email:
+                    data_publicacao:
                       type: string
-                    telefone:
-                      type: string
-                    precatorio:
-                      type: object
-                      properties:
-                        numero_precatorio:
-                          type: string
-                        valor_nominal:
-                          type: number
-                        foro:
-                          type: string
-                        data_publicacao:
-                          type: string
-                          format: date
+                      format: date
               required:
               - nome
               - cpf_cnpj

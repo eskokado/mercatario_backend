@@ -8,23 +8,18 @@ RSpec.describe 'Credores', type: :request do
       parameter name: :credor, in: :body, schema: {
         type: :object,
         properties: {
-          credor: {
+          nome: { type: :string },
+          cpf_cnpj: { type: :string },
+          email: { type: :string },
+          telefone: { type: :string },
+          precatorio: {
             type: :object,
             properties: {
-              nome: { type: :string },
-              cpf_cnpj: { type: :string },
-              email: { type: :string },
-              telefone: { type: :string },
-              precatorio: {
-                type: :object,
-                properties: {
-                  numero_precatorio: { type: :string },
-                  valor_nominal: { type: :number },
-                  foro: { type: :string },
-                  data_publicacao: { type: :string, format: 'date' }
-                }
-              }
-  }
+              numero_precatorio: { type: :string },
+              valor_nominal: { type: :number },
+              foro: { type: :string },
+              data_publicacao: { type: :string, format: 'date' }
+            }
           }
         },
         required: %w[nome cpf_cnpj]

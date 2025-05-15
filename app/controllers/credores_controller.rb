@@ -20,7 +20,7 @@ class CredoresController < ApplicationController
   private
 
   def credor_params
-    params.require(:credor).permit(
+    params.permit(
       :nome,
       :cpf_cnpj,
       :email,
@@ -32,7 +32,7 @@ class CredoresController < ApplicationController
         :data_publicacao
       ]
     ).tap do |whitelisted|
-      if params[:credor][:precatorio].present?
+      if params[:precatorio].present?
         whitelisted[:precatorios_attributes] = [ whitelisted.delete(:precatorio) ]
       end
     end
