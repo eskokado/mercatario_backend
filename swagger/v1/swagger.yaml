@@ -110,19 +110,22 @@ paths:
           description: Credor encontrado
           content:
             application/json:
-              schema:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                  nome:
-                    type: string
-                  precatorios:
-                    type: array
-                  documentos_pessoais:
-                    type: array
-                  certidoes:
-                    type: array
+              examples:
+                success:
+                  value:
+                    id: 1
+                    nome: João Silva
+                    cpf_cnpj: 123.456.789-09
+                    email: example@email.com
+                    telefone: '12345678901'
+                    created_at: '2025-05-15T20:24:24.773Z'
+                    updated_at: '2025-05-15T20:24:24.773Z'
+                    precatorios:
+                    - id: 2
+                      numero_precatorio: numero002
+                      valor_nominal: '200.0'
+                      foro: foro tal
+                      data_publicacao: '2025-05-15'
   "/credores/{id}/documentos":
     post:
       summary: Faz upload de documento pessoal
