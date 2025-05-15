@@ -5,7 +5,7 @@ class CredoresController < ApplicationController
       credor = Credor.new(credor_params)
 
       if credor.save
-        render json: { data: credor }, status: :created
+        render json: credor, status: :created
       else
         render json: credor.errors.full_messages, status: :unprocessable_entity
       end
