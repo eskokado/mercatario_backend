@@ -13,7 +13,7 @@ class CredoresController < ApplicationController
   end
 
   def show
-    credor = Credor.includes(:precatorios, :documento_pessoals, :certidaos).find(params[:id])
+    credor = Credor.includes(:precatorios, :documentos_pessoais, :certidoes).find(params[:id])
     render json: credor
   end
 
