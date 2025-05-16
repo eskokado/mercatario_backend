@@ -18,8 +18,13 @@ class Certidao < ApplicationRecord
   self.table_name = "certidoes"
 
   belongs_to :credor, foreign_key: "credor_id"
+  has_one_attached :arquivo
 
-  TIPO_CERTIDAOS = %w[federal estadual municipal trabalhista]
+  TIPOS_CERTIDOES = %w[federal estadual municipal trabalhista]
   ORIGENS = %w[manual api]
   STATUSES = %w[negativa positiva invalida pendente]
+
+  validates :tipo, presence: true, inclusion: { in: TIPOS_CERTIDOES }
+  validates :origem, presence: true, inclusion: { in: ORIGENS }
+  validates :status, presence: true, inclusion: { in: STATUSES }
 end
