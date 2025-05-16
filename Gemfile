@@ -22,6 +22,9 @@ group :development, :test do
   gem "brakeman", require: false
   gem "rubocop-rails-omakase", require: false
 
+  gem "factory_bot_rails"
+  gem "shoulda-matchers"
+
   gem "rspec-rails", "~> 6.0"
   gem "rswag", "~> 2.8"
   gem "rswag-api", "~> 2.8"
@@ -36,6 +39,7 @@ end
 group :test do
   gem "capybara"
   gem "selenium-webdriver"
+  gem "database_cleaner-active_record"
 end
 
 gem "active_storage_validations", "~> 2.0"
