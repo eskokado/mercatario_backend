@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: documentos_pessoais
+#
+#  id          :integer          not null, primary key
+#  credor_id   :integer
+#  tipo        :string
+#  arquivo_url :string
+#  enviado_em  :datetime
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 class DocumentoPessoal < ApplicationRecord
   self.table_name = "documentos_pessoais"
 

@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: credores
+#
+#  id         :integer          not null, primary key
+#  nome       :string
+#  cpf_cnpj   :string
+#  email      :string
+#  telefone   :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Credor < ApplicationRecord
   self.table_name = "credores"
 
