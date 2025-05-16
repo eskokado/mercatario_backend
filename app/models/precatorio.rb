@@ -11,10 +11,6 @@
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #
-# Indexes
-#
-#  index_precatorios_on_credor_id  (credor_id) UNIQUE
-#
 
 class Precatorio < ApplicationRecord
   self.table_name = "precatorios"
