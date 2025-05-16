@@ -28,7 +28,7 @@ class CertidoesController < ApplicationController
   private
 
   def set_credor
-    @credor = Credor.find(params[:credor_id] || params[:id])
+    @credor = Credor.find(params[:id])
   rescue ActiveRecord::RecordNotFound
     render json: { error: "Credor não encontrado" }, status: :not_found
   end
