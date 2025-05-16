@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_15_191919) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_16_173911) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -80,7 +80,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_15_191919) do
     t.date "data_publicacao"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["credor_id"], name: "index_precatorios_on_credor_id", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
