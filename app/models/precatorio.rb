@@ -23,6 +23,11 @@ class Precatorio < ApplicationRecord
 
   before_validation :set_credor_id, if: -> { credor.present? }
 
+  validates :numero_precatorio, presence: true, uniqueness: true
+  validates :valor_nominal, presence: true, numericality: { greater_than: 0 }
+  validates :foro, presence: true
+  validates :data_publicacao, presence: true
+
   private
 
   def set_credor_id
