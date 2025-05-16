@@ -4,6 +4,13 @@ require_relative '../config/environment'
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 
+ActiveSupport::Inflector.inflections do |inflect|
+  inflect.irregular "credor", "credores"
+  inflect.irregular "precatorio", "precatorios"
+  inflect.irregular "certidao", "certidoes"
+  inflect.irregular "documento_pessoal", "documentos_pessoais"
+end
+
 begin
   ActiveRecord::Migration.maintain_test_schema!
 rescue ActiveRecord::PendingMigrationError => e
