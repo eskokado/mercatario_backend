@@ -1,0 +1,295 @@
+_type: export
+__export_format: 4
+__export_date: 2025-05-17T12:32:35.097Z
+__export_source: insomnia.desktop.app:v10.0.0
+resources:
+  - _id: req_3373e90fe5e3411c81ff0d6c9e74ce01
+    parentId: fld_01442d301b644f29b91a29f6edefeca4
+    modified: 1747485000234
+    created: 1747402166863
+    url: http://localhost:3000/credores/1/documentos
+    name: Adicionar docs ao credor
+    description: ""
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_8e884f977584473eb4c25325e10773ed
+          name: arquivo
+          value: ""
+          description: ""
+          disabled: false
+          type: file
+          fileName: /run/user/1000/doc/f0eb069d/modern_front_end_development_for_rails_webpacker_stimulus_and_react.pdf
+        - id: pair_90850d3f91de4c2da870cfed07268bc0
+          name: tipo
+          value: rg
+          description: ""
+          disabled: false
+          type: text
+          multiline: false
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+      - name: User-Agent
+        value: insomnia/10.0.0
+    authentication: {}
+    metaSortKey: -1747402166863
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_01442d301b644f29b91a29f6edefeca4
+    parentId: wrk_29c68b41da31461880d6d3a865d152a0
+    modified: 1747402159315
+    created: 1747402159315
+    name: Documentos Pessoais
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1747402159315
+    _type: request_group
+  - _id: wrk_29c68b41da31461880d6d3a865d152a0
+    parentId: null
+    modified: 1747402468674
+    created: 1747402060472
+    name: Mercatorio_eskokado
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_f274e86b619c40648b14f47617bdf0d4
+    parentId: fld_0ccb2617a8b24848a33f0975e01f0175
+    modified: 1747484895953
+    created: 1747419328371
+    url: http://localhost:3000/api/certidoes?cpf_cnpj=00000000
+    name: Simulação de certições
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/10.0.0
+    authentication: {}
+    metaSortKey: -1747419328371
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_0ccb2617a8b24848a33f0975e01f0175
+    parentId: wrk_29c68b41da31461880d6d3a865d152a0
+    modified: 1747411966761
+    created: 1747411966761
+    name: Certidões
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1747402151864.5
+    _type: request_group
+  - _id: req_24fd55d4da7b4f73b50107edfc65e732
+    parentId: fld_0ccb2617a8b24848a33f0975e01f0175
+    modified: 1747485015625
+    created: 1747411966763
+    url: http://localhost:3000/credores/1/certidoes
+    name: Adicionar certidão ao credor
+    description: ""
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_8e884f977584473eb4c25325e10773ed
+          name: arquivo
+          value: ""
+          description: ""
+          disabled: false
+          type: file
+          fileName: /run/user/1000/doc/f0eb069d/modern_front_end_development_for_rails_webpacker_stimulus_and_react.pdf
+        - id: pair_90850d3f91de4c2da870cfed07268bc0
+          name: tipo
+          value: estadual
+          description: ""
+          disabled: false
+          type: text
+          multiline: false
+        - id: pair_dcbe2b142e5d44d3889f4cbe18eb5af2
+          name: origem
+          value: manual
+          description: ""
+          disabled: false
+        - id: pair_f03f67b9dfff45abb449b0ff889be62d
+          name: status
+          value: negativa
+          description: ""
+          disabled: false
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+      - name: User-Agent
+        value: insomnia/10.0.0
+    authentication: {}
+    metaSortKey: -1747402166863
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_30668c5592f34e46ac784c446e8070fb
+    parentId: fld_0ccb2617a8b24848a33f0975e01f0175
+    modified: 1747484954176
+    created: 1747412313602
+    url: http://localhost:3000/credores/1/buscar-certidoes
+    name: Consultar certidões do credor
+    description: ""
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_8e884f977584473eb4c25325e10773ed
+          name: arquivo
+          value: ""
+          description: ""
+          disabled: false
+          type: file
+          fileName: /run/user/1000/doc/f0eb069d/modern_front_end_development_for_rails_webpacker_stimulus_and_react.pdf
+        - id: pair_90850d3f91de4c2da870cfed07268bc0
+          name: tipo
+          value: federal
+          description: ""
+          disabled: false
+          type: text
+          multiline: false
+        - id: pair_dcbe2b142e5d44d3889f4cbe18eb5af2
+          name: origem
+          value: manual
+          description: ""
+          disabled: false
+        - id: pair_f03f67b9dfff45abb449b0ff889be62d
+          name: status
+          value: negativa
+          description: ""
+          disabled: false
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+      - name: User-Agent
+        value: insomnia/10.0.0
+    authentication: {}
+    metaSortKey: -1743467236251
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_a7fd36fe6ddb4100adfd47b95162e7d2
+    parentId: fld_0da70f9d3df942bd8091d3c665741fba
+    modified: 1747484935382
+    created: 1747408814057
+    url: http://localhost:3000/credores/1
+    name: Consultar credor
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/10.0.0
+    authentication: {}
+    metaSortKey: -1747408814057
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_0da70f9d3df942bd8091d3c665741fba
+    parentId: wrk_29c68b41da31461880d6d3a865d152a0
+    modified: 1747408789394
+    created: 1747402144414
+    name: Credores
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1747402144414
+    _type: request_group
+  - _id: req_695f3b7f6fee41a6b20dbae2418653e0
+    parentId: fld_0da70f9d3df942bd8091d3c665741fba
+    modified: 1747413767817
+    created: 1747408793544
+    url: http://localhost:3000/credores
+    name: Adicionar credor
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Credor tal",
+          "cpf_cnpj": "123.123.123-3",
+          "email": "credor.tal@email.com",
+          "telefone": "(11) 932970496",
+          "precatorio": {
+            "numero_precatorio": "001001002",
+            "valor_nominal": 100,
+            "foro": "foro tal",
+            "data_publicacao": "2025-05-16"
+          }
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/10.0.0
+    authentication: {}
+    metaSortKey: -1747408793544
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_c6e4fa9c6cc7ab350b7fd9f16be73d6d47ef9267
+    parentId: wrk_29c68b41da31461880d6d3a865d152a0
+    modified: 1747402060475
+    created: 1747402060475
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1747402060475
+    _type: environment
+  - _id: jar_c6e4fa9c6cc7ab350b7fd9f16be73d6d47ef9267
+    parentId: wrk_29c68b41da31461880d6d3a865d152a0
+    modified: 1747402060477
+    created: 1747402060477
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
