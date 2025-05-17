@@ -15,6 +15,8 @@ class CredoresController < ApplicationController
   def show
     credor = Credor.includes(:precatorios, :documentos_pessoais, :certidoes).find(params[:id])
     render json: credor
+  rescue ActiveRecord::RecordNotFound
+    render json: { error: "Credor não encontrado" }, status: :not_found
   end
 
   private
