@@ -25,7 +25,7 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "shoulda-matchers"
 
-  gem "rspec-rails", "~> 6.0"
+  gem "rspec-rails", "~> 8.0"
   gem "rswag", "~> 2.8"
   gem "rswag-api", "~> 2.8"
   gem "rswag-ui", "~> 2.8"
