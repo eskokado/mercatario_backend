@@ -16,7 +16,7 @@ FactoryBot.define do
     tipo { "rg" }
     arquivo { Rack::Test::UploadedFile.new(Rails.root.join('spec/fixtures/test.png'), 'image/png') }
     arquivo_url { 'http://localhost:3000/spec/fixtures/test.png' }
-    enviado_en { Date.now }
+    enviado_em { Time.current }
     credor
   end
 end
