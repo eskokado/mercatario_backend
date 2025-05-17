@@ -21,4 +21,13 @@ class DocumentoPessoal < ApplicationRecord
 
   validates :tipo, presence: true, inclusion: { in: TIPOS_DOCS }
   validates :arquivo, presence: true
+
+  validate :arquivo_deve_ser_pdf
+
+  private
+
+  def arquivo_deve_ser_pdf
+    return unless arquivo.attached?
+    errors.add(:arquivo, "deve ser um PDF") unless arquivo.content_type == "application/pdf"
+  end
 end
