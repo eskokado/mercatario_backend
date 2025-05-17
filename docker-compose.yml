@@ -1,4 +1,13 @@
 services:
+  web:
+    build: .
+    environment:
+      DATABASE_URL: postgres://postgres:password@db:5432
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    command: sh -c "rails db:create && rails db:migrate && rails server -b 0.0.0.0"
   db:
     image: postgres:16
     environment:
@@ -7,7 +16,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
-      - "54321:5432"
+      - "5432:5432"
 
 volumes:
   postgres_data:
