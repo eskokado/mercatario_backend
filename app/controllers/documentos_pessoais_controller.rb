@@ -7,6 +7,11 @@ class DocumentosPessoaisController < ApplicationController
     if params[:arquivo].present?
       documento.arquivo.attach(params[:arquivo])
 
+      if documento.arquivo.content_type != "application/pdf"
+        documento.arquivo.purge
+        return render json: { errors: { arquivo: [ "deve ser um PDF" ] } }, status: :unprocessable_entity
+      end
+
       if documento.save
         arquivo_url = rails_blob_url(documento.arquivo, host: request.base_url)
         documento.update_columns(arquivo_url: arquivo_url, enviado_em: Time.current)
