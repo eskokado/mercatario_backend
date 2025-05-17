@@ -33,7 +33,7 @@
 require 'rails_helper'
 
 RSpec.describe Certidao, type: :model do
-  let(:credor) { Credor.create } # Adjust according to your Credor model requirements
+  let(:credor) { Credor.create }
   subject do
     described_class.new(
       credor: credor,
