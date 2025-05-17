@@ -49,6 +49,7 @@ API Mock
 ## Como executar
 * git clone \<repositorio>
 * docker-compose up --build
+* Acessar a API em: http://localhost:3000
 
 ## No insomia
 * importar arquivo /insomia/Insomnia_2025-05-17.yaml
