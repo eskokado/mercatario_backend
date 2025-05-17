@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Desenvolver uma API REST para simular a originação de precatórios, permitindo:
+Desenvolvido uma API REST para simular a originação de precatórios, permitindo:
 * Cadastro de credores e precatórios.
 * Upload de documentos pessoais e certidões.
 * Integração com uma API mock para obtenção automática de certidões.
@@ -29,14 +29,6 @@ API Mock
   * Armazenamento: Active Storage (upload local de arquivos).
   * Containerização: Docker e Docker Compose.
   * Documentação: Instruções claras para execução local.
-
-## Requisitos obrigatórios
-
-* Utilizar uma das linguagens: **Python** ou **Ruby**.
-* Endpoints RESTful bem definidos
-* Upload de arquivos (armazenamento local ou temporário)
-* Implementar uma API mock local para simular a busca de certidões
-* Documentação de como rodar o projeto localmente
 
 ## Endpoints existentes
 
