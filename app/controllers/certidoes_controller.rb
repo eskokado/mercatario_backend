@@ -7,6 +7,11 @@ class CertidoesController < ApplicationController
     if params[:arquivo].present?
       certidao.arquivo.attach(params[:arquivo])
 
+      if certidao.arquivo.content_type != "application/pdf"
+        certidao.arquivo.purge
+        return render json: { errors: { arquivo: [ "deve ser um PDF" ] } }, status: :unprocessable_entity
+      end
+
       if certidao.save
         arquivo_url = rails_blob_url(certidao.arquivo, host: request.base_url)
         certidao.update_columns(arquivo_url: arquivo_url, recebida_em: Time.current)
